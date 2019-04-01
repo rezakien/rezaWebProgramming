@@ -16,6 +16,6 @@ if($METHOD=='GET'){
 	$days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда','Четверг', 'Пятница', 'Суббота'];
     $res=  array(['Дата' => $date, 'День недели' => $days[date("w", strtotime($date) )]
     ]);
-    echo json_encode($res,JSON_UNESCAPED_UNICODE);
+    echo json_encode($res,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 }
 ?>
