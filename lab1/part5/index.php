@@ -1,6 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Content-Type:application/json,charset=utf-8",true);
+include '../functions.php';
 function PushArr($arr,$existing_array){
 	return $existing_array = array_merge($existing_array,$arr);
 }
@@ -19,6 +20,9 @@ if($METHOD=='GET'){
 		if(isset($cities[$_GET['city']]))
 			$res = array('Номер города'=>$_GET['city'],'Город'=>$cities[$_GET['city']]);
 			echo json_encode($res,JSON_UNESCAPED_UNICODE);
+			$URI = $_SERVER['REQUEST_URI'];
+			$result = array('url' => 'http://localhost'.$URI ,'response'=> $res,'method'=>$METHOD);
+			SaveToJSON('lab1.json',$result);
 		}
 }
 

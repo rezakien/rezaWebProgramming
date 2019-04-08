@@ -1,6 +1,8 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Content-Type:application/json,charset=utf-8",true);
+include '../functions.php';
+
 function PushArr($arr,$existing_array){
 	return $existing_array = array_merge($existing_array,$arr);
 }
@@ -34,6 +36,9 @@ if($METHOD=='GET'){
 		$res = json_encode($resArray,JSON_UNESCAPED_UNICODE);
 	}
 	echo($res);
+	$URI = $_SERVER['REQUEST_URI'];
+	$result = array('url' => 'http://localhost'.$URI ,'response'=> $resArray,'method'=>$METHOD);
+	SaveToJSON('lab1.json',$result);
 }
 
 ?>

@@ -20,9 +20,10 @@ if($METHOD=='GET'){
 				$i++;
 			}
 			echo json_encode(array('Число Фибоначчи'=>$fib),JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-			SaveToJSON('lab1.json',array('Число Фибоначчи'=>$fib));
+			$URI = $_SERVER['REQUEST_URI'];
+			$result = array('url' => 'http://localhost'.$URI ,'response'=> array('Число Фибоначчи'=>$fib),'method'=>$METHOD);
+			SaveToJSON('lab1.json',$result);
 		}
 	}
 }
-
 ?>
