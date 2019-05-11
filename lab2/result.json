@@ -1,0 +1,5 @@
+{"table": "Clients", "response": [[22, "Ivan Yakovlev"], [24, "Kropotin Ivan"]], "method": "GET", "url": "http://localhost:5000/getUsers"}
+{"table": "Clients", "response": [22, "Ivan Yakovlev"], "method": "GET", "url": "http://localhost:5000/getUsers/22"}
+{"table": "Clients", "response": "Helena Swid", "method": "POST", "url": "http://localhost:5000/getUsers"}
+{"table": "Clients", "response": ["23", "Loreana Grande"], "method": "PUT", "url": "http://localhost:5000/getUsers"}
+{"table": "Clients", "response": ["Loreana Grande"], "method": "DELETE", "url": "http://localhost:5000/getUsers"}
