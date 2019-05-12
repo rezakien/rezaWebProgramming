@@ -1,0 +1,380 @@
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <getClientsResponse xmlns="http://tempuri.org/">
+      <getClientsResult>
+        <xs:schema id="NewDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+          <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+            <xs:complexType>
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Table1">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="ID_Client" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+                      <xs:element name="Name">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="100" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:complexType>
+          </xs:element>
+        </xs:schema>
+        <diffgr:diffgram xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+          <NewDataSet xmlns="">
+            <Table1 diffgr:id="Table11" msdata:rowOrder="0">
+              <ID_Client>1</ID_Client>
+              <Name>Ivan Griboedov</Name>
+            </Table1>
+            <Table1 diffgr:id="Table12" msdata:rowOrder="1">
+              <ID_Client>2</ID_Client>
+              <Name>Ivan Griboedov</Name>
+            </Table1>
+            <Table1 diffgr:id="Table13" msdata:rowOrder="2">
+              <ID_Client>3</ID_Client>
+              <Name>Iona Loreonova</Name>
+            </Table1>
+          </NewDataSet>
+        </diffgr:diffgram>
+      </getClientsResult>
+    </getClientsResponse>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <postClientsResponse xmlns="http://tempuri.org/">
+      <postClientsResult>Добавлена новая запись в таблицу Clients: Name - Helena Kashapova</postClientsResult>
+    </postClientsResponse>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <putClientsResponse xmlns="http://tempuri.org/">
+      <putClientsResult>Запись обновлена</putClientsResult>
+    </putClientsResponse>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <deleteClientsResponse xmlns="http://tempuri.org/">
+      <deleteClientsResult>Запись удалена</deleteClientsResult>
+    </deleteClientsResponse>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <getServiceResponse xmlns="http://tempuri.org/">
+      <getServiceResult>
+        <xs:schema id="NewDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+          <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+            <xs:complexType>
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Table1">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="ID_Service" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+                      <xs:element name="ServiceName">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="100" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="ServicePrice" type="xs:double" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:complexType>
+          </xs:element>
+        </xs:schema>
+        <diffgr:diffgram xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+          <NewDataSet xmlns="">
+            <Table1 diffgr:id="Table11" msdata:rowOrder="0">
+              <ID_Service>1</ID_Service>
+              <ServiceName>Simple Project</ServiceName>
+              <ServicePrice>2400</ServicePrice>
+            </Table1>
+            <Table1 diffgr:id="Table12" msdata:rowOrder="1">
+              <ID_Service>2</ID_Service>
+              <ServiceName>Heavy Project</ServiceName>
+              <ServicePrice>5200</ServicePrice>
+            </Table1>
+            <Table1 diffgr:id="Table13" msdata:rowOrder="2">
+              <ID_Service>3</ID_Service>
+              <ServiceName>Lazy Project</ServiceName>
+              <ServicePrice>1000</ServicePrice>
+            </Table1>
+            <Table1 diffgr:id="Table14" msdata:rowOrder="3">
+              <ID_Service>4</ID_Service>
+              <ServiceName>Creative Project</ServiceName>
+              <ServicePrice>10000</ServicePrice>
+            </Table1>
+          </NewDataSet>
+        </diffgr:diffgram>
+      </getServiceResult>
+    </getServiceResponse>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <postServiceResponse xmlns="http://tempuri.org/">
+      <postServiceResult>Добавлена новая запись в таблицу Services: ServiceName - Awesome Service Testing ServicePrice - 4444</postServiceResult>
+    </postServiceResponse>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <putServiceResponse xmlns="http://tempuri.org/">
+      <putServiceResult>Запись обновлена</putServiceResult>
+    </putServiceResponse>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <deleteServiceResponse xmlns="http://tempuri.org/">
+      <deleteServiceResult>Запись удалена</deleteServiceResult>
+    </deleteServiceResponse>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <getOrdersResponse xmlns="http://tempuri.org/">
+      <getOrdersResult>
+        <xs:schema id="NewDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+          <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+            <xs:complexType>
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Table1">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="ID_Order" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+                      <xs:element name="Name">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="100" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="DateOrder" type="xs:dateTime" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:complexType>
+          </xs:element>
+        </xs:schema>
+        <diffgr:diffgram xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+          <NewDataSet xmlns="">
+            <Table1 diffgr:id="Table11" msdata:rowOrder="0">
+              <ID_Order>1</ID_Order>
+              <Name>Kirill Afanasev</Name>
+              <DateOrder>2019-05-13T00:00:00+05:00</DateOrder>
+            </Table1>
+            <Table1 diffgr:id="Table12" msdata:rowOrder="1">
+              <ID_Order>2</ID_Order>
+              <Name>Ivan Griboedov</Name>
+              <DateOrder>2019-05-13T00:00:00+05:00</DateOrder>
+            </Table1>
+            <Table1 diffgr:id="Table13" msdata:rowOrder="2">
+              <ID_Order>3</ID_Order>
+              <Name>Ivan Griboedov</Name>
+              <DateOrder>2019-01-11T00:00:00+05:00</DateOrder>
+            </Table1>
+            <Table1 diffgr:id="Table14" msdata:rowOrder="3">
+              <ID_Order>4</ID_Order>
+              <Name>Kirill Afanasev</Name>
+              <DateOrder>2019-02-22T00:00:00+05:00</DateOrder>
+            </Table1>
+          </NewDataSet>
+        </diffgr:diffgram>
+      </getOrdersResult>
+    </getOrdersResponse>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <postOrdersResponse xmlns="http://tempuri.org/">
+      <postOrdersResult>Добавлена новая запись в таблицу Orders: OrderDate - 13.05.2019 4:52:00 Client_ID - 3</postOrdersResult>
+    </postOrdersResponse>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <putOrdersResponse xmlns="http://tempuri.org/">
+      <putOrdersResult>Запись обновлена</putOrdersResult>
+    </putOrdersResponse>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <deleteOrdersResponse xmlns="http://tempuri.org/">
+      <deleteOrdersResult>Запись удалена</deleteOrdersResult>
+    </deleteOrdersResponse>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <getOSResponse xmlns="http://tempuri.org/">
+      <getOSResult>
+        <xs:schema id="NewDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+          <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+            <xs:complexType>
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Table1">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="ID_OrderService" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+                      <xs:element name="Name">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="100" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="DateOrder" type="xs:dateTime" />
+                      <xs:element name="ServiceName">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="100" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="ServicePrice" type="xs:double" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:complexType>
+          </xs:element>
+        </xs:schema>
+        <diffgr:diffgram xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+          <NewDataSet xmlns="">
+            <Table1 diffgr:id="Table11" msdata:rowOrder="0">
+              <ID_OrderService>1</ID_OrderService>
+              <Name>Kirill Afanasev</Name>
+              <DateOrder>2019-05-13T00:00:00+05:00</DateOrder>
+              <ServiceName>Heavy Project</ServiceName>
+              <ServicePrice>5200</ServicePrice>
+            </Table1>
+            <Table1 diffgr:id="Table12" msdata:rowOrder="1">
+              <ID_OrderService>2</ID_OrderService>
+              <Name>Ivan Griboedov</Name>
+              <DateOrder>2019-01-11T00:00:00+05:00</DateOrder>
+              <ServiceName>Simple Project</ServiceName>
+              <ServicePrice>2400</ServicePrice>
+            </Table1>
+          </NewDataSet>
+        </diffgr:diffgram>
+      </getOSResult>
+    </getOSResponse>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <getOSResponse xmlns="http://tempuri.org/">
+      <getOSResult>
+        <xs:schema id="NewDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+          <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+            <xs:complexType>
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Table1">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="ID_OrderService" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+                      <xs:element name="Name">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="100" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="DateOrder" type="xs:dateTime" />
+                      <xs:element name="ServiceName">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="100" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="ServicePrice" type="xs:double" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:complexType>
+          </xs:element>
+        </xs:schema>
+        <diffgr:diffgram xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+          <NewDataSet xmlns="">
+            <Table1 diffgr:id="Table11" msdata:rowOrder="0">
+              <ID_OrderService>1</ID_OrderService>
+              <Name>Kirill Afanasev</Name>
+              <DateOrder>2019-05-13T00:00:00+05:00</DateOrder>
+              <ServiceName>Heavy Project</ServiceName>
+              <ServicePrice>5200</ServicePrice>
+            </Table1>
+          </NewDataSet>
+        </diffgr:diffgram>
+      </getOSResult>
+    </getOSResponse>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <postOSResponse xmlns="http://tempuri.org/">
+      <postOSResult>Добавлена новая запись в таблицу OrdersServices: Order_ID - 1 Service_ID - 1 Quentity - 1</postOSResult>
+    </postOSResponse>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <putOSResponse xmlns="http://tempuri.org/">
+      <putOSResult>Запись обновлена</putOSResult>
+    </putOSResponse>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <deleteOSResponse xmlns="http://tempuri.org/">
+      <deleteOSResult>Запись удалена</deleteOSResult>
+    </deleteOSResponse>
+  </s:Body>
+</s:Envelope>

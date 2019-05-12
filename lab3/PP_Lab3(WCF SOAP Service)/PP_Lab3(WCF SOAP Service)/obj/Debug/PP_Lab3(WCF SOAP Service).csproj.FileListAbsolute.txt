@@ -1,0 +1,7 @@
+C:\Users\Rezakien\source\repos\PP_Lab3(WCF SOAP Service)\PP_Lab3(WCF SOAP Service)\bin\PP_Lab3(WCF SOAP Service).dll.config
+C:\Users\Rezakien\source\repos\PP_Lab3(WCF SOAP Service)\PP_Lab3(WCF SOAP Service)\bin\PP_Lab3(WCF SOAP Service).dll
+C:\Users\Rezakien\source\repos\PP_Lab3(WCF SOAP Service)\PP_Lab3(WCF SOAP Service)\bin\PP_Lab3(WCF SOAP Service).pdb
+C:\Users\Rezakien\source\repos\PP_Lab3(WCF SOAP Service)\PP_Lab3(WCF SOAP Service)\obj\Debug\PP_Lab3(WCF SOAP Service).csprojAssemblyReference.cache
+C:\Users\Rezakien\source\repos\PP_Lab3(WCF SOAP Service)\PP_Lab3(WCF SOAP Service)\obj\Debug\PP_Lab3(WCF SOAP Service).csproj.CoreCompileInputs.cache
+C:\Users\Rezakien\source\repos\PP_Lab3(WCF SOAP Service)\PP_Lab3(WCF SOAP Service)\obj\Debug\PP_Lab3(WCF SOAP Service).dll
+C:\Users\Rezakien\source\repos\PP_Lab3(WCF SOAP Service)\PP_Lab3(WCF SOAP Service)\obj\Debug\PP_Lab3(WCF SOAP Service).pdb
