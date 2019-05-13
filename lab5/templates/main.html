@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Laboratory 5 </title>
+</head>
+<body>
+<h1>Clients</h1>
+<form action="/getClient" method="POST">
+	<h4>Show</h4>
+	<label for="_id">Client ID</label>
+	<input type="text" name="_id">
+	<input type="submit" value="Show">
+</form>
+
+<form action="/postClient" method="POST">
+	<h4>Add</h4>
+	<label for="client_name">Client Name</label>
+	<input type="text" name="client_name">
+	<input type="submit" value="Add">
+</form>
+
+<form action="/putClient" method="POST">
+	<h4>Put</h4>
+	<label for="_id">Client ID</label><input type="text" name="_id">
+	<label for="user_name">Client Name</label><input type="text" name="user_name">
+	<input type="submit" value="Put">
+</form>
+
+<form action="/deleteClient" method="POST">
+	<h4>Delete</h4>
+	<label for="user_name">Client Name</label><input type="text" name="user_name">
+	<input type="submit" value="Delete">
+</form>
+
+<h1>Services</h1>
+<form action="/getService" method="POST">
+	<h4>Show</h4>
+	<label for="_id">Service ID</label>
+	<input type="text" name="_id">
+	<input type="submit" value="Show">
+</form>
+
+<form action="/postService" method="POST">
+	<h4>Add</h4>
+	<label for="name">Name</label>
+	<input type="text" name="name">
+	<label for="price">Price</label>
+	<input type="text" name="price">
+	<input type="submit" value="Add">
+</form>
+
+<form action="/putService" method="POST">
+	<h4>Put</h4>
+	<label for="id_service">ID</label><input type="text" name="id_service">
+	<label for="name">Name</label><input type="text" name="name">
+	<label for="price">Price</label><input type="text" name="price">
+	<input type="submit" value="Put">
+</form>
+
+<form action="/deleteService" method="POST">
+	<h4>Delete</h4>
+	<label for="id_service">ID</label><input type="text" name="id_service">
+	<input type="submit" value="Delete">
+</form>
+
+
+</body>
+</html>
