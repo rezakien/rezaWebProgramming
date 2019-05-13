@@ -1,0 +1,12 @@
+{
+  "result": "molodez,_vozmi_s_polki_piroshok",
+  "method": "GET",
+  "headers": {
+    "Server": "Cowboy",
+    "Connection": "keep-alive",
+    "Date": "Mon, 13 May 2019 00:26:15 GMT",
+    "Content-Type": "application/json",
+    "Content-Length": "47",
+    "Via": "1.1 vegur"
+  }
+}
