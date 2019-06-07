@@ -25,11 +25,21 @@ def addTest():
 
 @app.route("/addQuestion",methods=["POST","GET"])
 def addQuestion():
-	form_data = request.args.get("ID_Test") # возвращает get параметры из url
-	
-	getTest = requests.get("http://localhost:5000/tests/" +form_data+"")
+	ID_Test = request.args.get("ID_Test") # возвращает get параметры из url
+	NameQuestion = request.args.get("NameQuestion")
+	getTest = requests.get("http://localhost:5000/tests/" +str(ID_Test)+"")
 	ID_Test = getTest.text.replace('"','').split("|")[0]
 	NameTest = getTest.text.replace('"','').split("|")[1]
-	return render_template("add.html",ID_Test=ID_Test,NameTest=NameTest,QuestionAdded=True)
+	return render_template("add.html",ID_Test=ID_Test,NameTest=NameTest,NameQuestion=NameQuestion,QuestionAdded=True)
+
+@app.route("/addAnswer",methods=["POST"])
+def addAnswer():
+	answers = [answer for answer in request.form.getlist("answer") if answer!= ""]
+	checks = [check for check in request.form.getlist("check")]
+	ID_Test = request.form["ID_Test"]
+	NameQuestion = request.form["NameQuestion"]
+	
+	r = requests.post("http://localhost:5000/questions",data={"answers":answers,"checks":checks,"NameQuestion":NameQuestion,"ID_Test":ID_Test})
+	return "ok"
 if __name__ == "__main__":
 	app.run(port=5001)

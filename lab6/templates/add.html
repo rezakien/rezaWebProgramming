@@ -20,18 +20,21 @@
 		  {%if not QuestionAdded%}
 			<form action="/addQuestion">
 				<input type="hidden" name="ID_Test" value="{{ID_Test}}">
-				<input type="submit" value="+" class="danger">
+				<input type="text" name="NameQuestion" placeholder="Вопрос" class="answer1">
+				<input type="button" value="+" class="danger" id="addQuestion">
 			</form>
 			{%endif%}
 			{% if QuestionAdded %}
-			<form action="/addAnswer" id="answers">
+			<form action="/addAnswer" id="answers" method="POST">
+				<h3>Вопрос - "{{NameQuestion}}"</h3>
 				<table class="answers">
-					<tr><td><input type="text" class="answer" name="answer"></td><td><span class="delete">X</span></td></tr>
-					<tr><td><input type="text" class="answer" name="answer"></td><td><span class="delete">X</span></td></tr>
+					<tr><td><input type="text" class="answer" name="answer"></td><td><span class="delete">X</span><input type="checkbox" class="checkbox"><input type="hidden" value="false" class="checkedH" name="check"></td></tr>
+					<tr><td><input type="text" class="answer" name="answer"></td><td><span class="delete">X</span><input type="checkbox" class="checkbox"><input type="hidden" value="false" class="checkedH" name="check"></td></tr>
 				</table>
-				
+				<input type="button" value="Готово" class="success">
+				<input type="hidden" value="{{ID_Test}}" name="ID_Test">
+				<input type="hidden" value="{{NameQuestion}}" name="NameQuestion">
 			</form>
-			<input type="submit" value="Готово" class="success">
 			{% endif %}
 		{% endif %}
 	</div>
@@ -42,7 +45,7 @@
 		var answers = $('.answer')
 		// alert(answers.index(this))
 		if(answers.index(this) == length)
-			$(".answers").append('<tr><td><input type="text" class="answer" name="answer"></td><td><span class="delete">X</span></td></tr>')
+			$(".answers").append('<tr><td><input type="text" class="answer" name="answer"></td><td><span class="delete">X</span><input type="checkbox" class="checkbox"><input type="hidden" value="false" class="checkedH" name="check"></td></tr>')
 	});
 	$("body").on("click",".delete",function(){
 		var deletes = $('.delete')
@@ -50,6 +53,43 @@
 		var trs = $('.answers tr')
 		// alert(trs.length)
 		trs.eq(at).remove()
+	});
+	$("body").on("change",".checkbox",function(){
+		var checkboxes = $(".checkbox:checked")
+		if($(this).prop("checked") && $(".answer").eq($(".checkbox").index(this)).val()!="")
+			$(".checkedH").eq($(".checkbox").index(this)).prop("value","true")
+		else{
+			if($(".answer").eq($(".checkbox").index(this)).val()!="")
+				console.log($(".answer").eq($(".checkbox").index(this)).val())
+			else{
+				alert("Заполните поле перед тем как отмечать!")
+			}
+			$(this).prop("checked",false)
+			$(".checkedH").eq($(".checkbox").index(this)).prop("value","false")
+		}
+		// alert(checkboxes.length)
+	});
+	$("body").on("click",".success",function(){
+		$(".answer").each(function(){
+			if($(this).val()==""){
+				var trs = $('.answers tr')
+				trs.eq($(".answer").index(this)).remove()
+			}
+		});
+		$.ajax({
+			type:"POST",
+			url:"/addQuestion",
+			data:$("form").serialize()
+		});
+	});
+	$("body").on("change",".answer",function(){
+		if($(this).val()==""){
+			$(".checkbox").eq($(".answer").index(this)).prop("checked",false)
+			$(".checkedH").eq($(".answer").index(this)).prop("value","false")
+		}
+	});
+	$("#addQuestion").click(function(){
+		console.log($("form").serialize())
 	});
 </script>
 </html>

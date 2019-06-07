@@ -91,7 +91,14 @@ class Question(Resource):
 	def delete(self):
 		pass
 	def post(self):
-		pass
+		data = request.form
+		answers = data.getlist("answers")
+		checks = data.getlist("checks")
+		ID_Test = data["ID_Test"]
+		NameQuestion = data["NameQuestion"]
+		for i,value in enumerate(answers):
+			args = [value,checks[i]]
+		print("Answers: {} \n Checks: {} \nNameQuestion: {} \n ID_Test: {}".format(answers,checks,NameQuestion,ID_Test))
 
 class Answer(Resource):
 	def get(self):
@@ -103,7 +110,7 @@ class Answer(Resource):
 
 # Adding routing to REST
 api.add_resource(Test,'/tests','/tests/<string:test_id>')
-
+api.add_resource(Question,'/questions','/questions/<string:question_id>')
 
 if __name__ == "__main__":
 	app.run()
