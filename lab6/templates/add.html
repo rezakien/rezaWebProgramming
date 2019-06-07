@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Laboratory 6</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+	<div class="content">
+		{%if not NameTest%}
+		<h1>Окно добавления тестов</h1>
+		<form action="/addTest" method="POST">
+			<label for="NameTest">Наименование теста</label>
+			<input type="text" name="NameTest" class="answer1">
+			<input type="submit" value="Добавить тест" class="success">
+		</form>
+		{%endif%}
+		{% if NameTest %}
+		  <h1>Тест - "{{ NameTest }}"</h1>
+		  {%if not QuestionAdded%}
+			<form action="/addQuestion">
+				<input type="hidden" name="ID_Test" value="{{ID_Test}}">
+				<input type="submit" value="+" class="danger">
+			</form>
+			{%endif%}
+			{% if QuestionAdded %}
+			<form action="/addAnswer" id="answers">
+				<table class="answers">
+					<tr><td><input type="text" class="answer" name="answer"></td><td><span class="delete">X</span></td></tr>
+					<tr><td><input type="text" class="answer" name="answer"></td><td><span class="delete">X</span></td></tr>
+				</table>
+				
+			</form>
+			<input type="submit" value="Готово" class="success">
+			{% endif %}
+		{% endif %}
+	</div>
+</body>
+<script>
+	$("body").on("keypress",".answer",function(){
+		var length = $(".answer").length-1
+		var answers = $('.answer')
+		// alert(answers.index(this))
+		if(answers.index(this) == length)
+			$(".answers").append('<tr><td><input type="text" class="answer" name="answer"></td><td><span class="delete">X</span></td></tr>')
+	});
+	$("body").on("click",".delete",function(){
+		var deletes = $('.delete')
+		var at = deletes.index(this)
+		var trs = $('.answers tr')
+		// alert(trs.length)
+		trs.eq(at).remove()
+	});
+</script>
+</html>
